@@ -1,0 +1,79 @@
+.dia-actual {
+  border-radius: 10px 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* .dia-actual > div > p {
+  margin: 0 0 15px;
+  padding: 0;
+} */
+
+.pais {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+}
+.pais-nombre {
+  font-size: 1.5rem;
+}
+.pais > img {
+  width: 2rem;
+}
+
+.descripcion {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  margin: 15px 0 0;
+}
+
+.imagen {
+  width: 120px;
+}
+
+.datos {
+  width: 100%;
+}
+
+
+.datos > .temperatura {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.datos-adicionales {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.temp-maxima-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.temp-minima-container {
+  display: flex;
+}
+
+
+.humedad-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.viento-container {
+  display: flex;
+}
+
+.datosAdicionalesImg {
+  width: 1rem;
+}
+
