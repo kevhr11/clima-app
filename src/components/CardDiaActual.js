@@ -57,7 +57,7 @@ function CardDiaActual({ climaActual }) {
         alt="Clima icon"
       />
       <div className="datos">
-        <p className="temperatura">{climaActual[0].main.temp} °C</p>
+        <p className="temperatura">{Math.round(climaActual[0].main.temp)} °C</p>
         <div className="datos-adicionales">
           <div className="datos-temperatura">
             <div className="temp-maxima-container">
@@ -75,7 +75,7 @@ function CardDiaActual({ climaActual }) {
                   }`,
                 }}
               />
-              <p>: {climaActual[0].main.temp_max} °C</p>
+              <p>: {Math.round(climaActual[0].main.temp_max)} °C</p>
             </div>
             <div className="temp-minima-container">
               <img
@@ -92,7 +92,7 @@ function CardDiaActual({ climaActual }) {
                   }`,
                 }}
               />
-              <p>: {climaActual[0].main.temp_min} °C</p>
+              <p>: {Math.round(climaActual[0].main.temp_min)} °C</p>
             </div>
           </div>
           <div className="otros-datos">

@@ -6,12 +6,14 @@ import Formulario from "./Formulario";
 import Card from "./Card";
 
 function Clima() {
-  const [climaActual, setClimaActual] = useState([]);
-  const [clima, setClima] = useState([]);
+  const [climaActual, setClimaActual] = useState("");
+  const [clima, setClima] = useState("");
+  const [errorCiudad, setErrorCiudad] = useState("");
 
   // Crear un nuevo objeto Date, que representa la fecha y hora actuales
   const fechaActual = new Date();
   const fechaActual2 = new Date();
+
 
   /* Sumar 2 horas a la variable fechaActual2 */
   fechaActual2.setHours(fechaActual.getHours() + 2);
@@ -32,6 +34,7 @@ function Clima() {
     return climaFiltrado;
   };
 
+  /*----------------------------------Obtener el clima al iniciar la aplicacion con la longitud y la latitud------------------------------------------*/
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(
       function (position) {
@@ -84,7 +87,10 @@ function Clima() {
     );
   }, []);
 
+
+  /*----------------------------------------Obtener el clima por ciudad----------------------------------------------------*/
   const mostrarClima = (ciudad) => {
+    setErrorCiudad("");
     if (ciudad) {
       const getData = async () => {
         try {
@@ -105,7 +111,7 @@ function Clima() {
         } catch (error) {
           // Manejar el error aquí
           console.error("Error al obtener datos:", error);
-
+          setErrorCiudad("El país seleccionado no existe verifique si esta bien escrito o si son dos palabras no pueden estar unidas.");
         }
       };
 
@@ -115,15 +121,16 @@ function Clima() {
     }
   };
 
-  
-
   return (
     <div className="contenedor-principal">
+      {!errorCiudad ? "" : <div className="error-pais">{errorCiudad}</div>}
       <Formulario mostrarClima={mostrarClima} />
 
-      {clima.map((el, index) => (
-        <Card key={index} el={el} climaActual={ climaActual } />
-      ))}
+      {climaActual && <Card  el={clima[0]} climaActual={climaActual} />}
+      {/* {
+        clima.map((el, index) => (
+        <Card key={index} el={el} climaActual={climaActual} />
+      ))} */}
     </div>
   );
 }

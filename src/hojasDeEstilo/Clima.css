@@ -22,6 +22,17 @@ body {
   grid-template-columns: 30% 70%;
 }
 
+.error-pais{
+  text-align: center;
+  width: 50vw;
+  margin: 0 auto;
+  padding: 10px;
+  margin-bottom: 20px;
+  background-color: red;
+  color: white;
+  border-radius: 9px;
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .card {
     grid-template-columns: 100%;
