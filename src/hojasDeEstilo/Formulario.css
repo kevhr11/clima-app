@@ -7,6 +7,7 @@ form {
   width: 60vw;
 }
 
+/* Estilos para el input donde se ingrea el país */
 input {
   padding: 8px;
   font-size: 14px;
@@ -15,6 +16,7 @@ input {
   border-radius: 5px;
 }
 
+/* Estilos para el boton */
 button {
   padding: 10px;
   background-color: #007bff;
@@ -26,6 +28,7 @@ button {
   border-radius: 5px;
 }
 
+/* Clase del div que contiene el formulario */
 .formulario-envio{
   display: flex;
   flex-direction: column;
@@ -33,16 +36,16 @@ button {
   align-items: center;
 }
 
-.error{
-  margin: 0 auto;
-  padding: 10px;
-  margin-bottom: 15px;
-  background-color: red;
-  color: white;
-  border-radius: 9px;
-}
-
+/* Media query para resolución movil */
 @media (max-width: 767px) {
+  /* Estilos del div para resolución movil */
+  .formulario-envio{
+    text-align: center;
+    font-size: 1rem;
+    width: 80%;
+  }
+
+  /* Estilos del boton para el ancho y del boton y el tamaño de la letra */
   button{
     font-size: 15px;
     width: 4rem;

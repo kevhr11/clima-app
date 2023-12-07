@@ -1,45 +1,109 @@
+/* Clase que se aplica al div padre que contiene la información de el clima de los proximos 5 días */
 .clima-5-dias {
   display: grid;
   grid-template-columns: 100%;
 }
 
+/* Clase que se aplica al div que contiene texo clima durante los próximos 5 dias */
 .texto-dias {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Clase que se aplica a la etiqueta p que contiene texo clima durante los próximos 5 dias */
 .texto-dias > p {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
 }
 
+/* Clase que se aplica al div contiene las card con la información de los proximos 5 días */
 .dias-clima {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   border-top: 1px solid black;
 }
 
+/* Clase que se aplica al div padre que contiene toda la información de cada día */
 .dia {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-right: 1px solid black;
+  text-align: center;
 }
 
+/* En esta clase se elimina el margen derecho del ultimo elemento */
 .dia:last-child {
   border-right: 0;
 }
 
+.datos-principales-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px;
+}
+
+.nombre-dia {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.descripcion-clima {
+  font-size: 1.3rem;
+}
+
+.temperatura-dias {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.datos-adicionales-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.temperatura-min-max-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.humedad-viento-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
 .container-datos {
   display: flex;
+  justify-content: center;
   margin: 5px 0 5px;
 }
 
 .container-datos > img {
   width: 1rem;
+}
+
+/* Media query para resolucion de tablet */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .datos-adicionales-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 10px;
+  }
 }
 
 @media (max-width: 767px) {
@@ -49,15 +113,26 @@
 
   .texto-dias > p {
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  .temperatura-dias {
+    font-size: 2rem;
     font-weight: bold;
   }
 
   .dia {
     border-bottom: 1px solid black;
+    border-right: 0;
   }
 
   .dia:last-child {
     border-bottom: 0;
+  }
+
+  .datos-adicionales-container {
+    font-size: 1.2rem;
   }
 }
