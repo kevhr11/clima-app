@@ -113,7 +113,7 @@ function Clima() {
         }
       }
     );
-  }, []);
+  }, [apiKey]);
 
   /* Hacer la peticion al iniciar la aplicacion */
   useEffect(() => {
