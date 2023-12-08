@@ -18,7 +18,7 @@ const filtrarClima = (data) => {
     //Comparar en un rango si la hora que viene en la peticion es mayor a la hora actual y si es menor a la hora que se le suman 2 horas 
     if (
       horaPeticion >= fechaActual.getHours() &&
-      horaPeticion < fechaActual2.getHours()
+      horaPeticion <= fechaActual2.getHours()
     ) {
       return true;
     }
