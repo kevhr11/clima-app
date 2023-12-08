@@ -5,8 +5,23 @@
 }
 
 /* Clase que se aplica al div que contiene texo clima durante los próximos 5 dias */
-.texto-dias {
+/* Aplicar la clase contenedor fila */
+/* .texto-dias {
   display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* Clase centra los elementos en forma de filas */
+.contenedor-fila{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-columna{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -27,10 +42,6 @@
 
 /* Clase que se aplica al div padre que contiene toda la información de cada día */
 .dia {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border-right: 1px solid black;
   text-align: center;
 }
@@ -42,10 +53,6 @@
 
 .datos-principales-container {
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   margin: 10px 0 10px;
 }
 
@@ -65,23 +72,17 @@
 }
 
 .datos-adicionales-container {
-  display: flex;
   width: 100%;
   justify-content: space-evenly;
-  align-items: center;
   margin-bottom: 10px;
 }
 
 .temperatura-min-max-container {
-  display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
 }
+
 .humedad-viento-container {
-  display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
-  text-align: center;
 }
 
 .container-datos {

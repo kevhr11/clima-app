@@ -70,7 +70,7 @@ function CardDiaActual({ climaActual, diaNoche }) {
           {/* Div que contiene la temperatura maxima y minima */}
           <div className="datos-temperatura">
             {/* Div que contiene el icono y la temperatura maxima */}
-            <div className="temp-maxima-container">
+            <div className="contenedor-datos margen-contenedor">
               {/* Icono temperatura maxima */}
               <img
                 src={temperaturaMaxima}
@@ -90,7 +90,7 @@ function CardDiaActual({ climaActual, diaNoche }) {
               <p>: {Math.round(climaActual[0].main.temp_max)} °C</p>
             </div>
             {/* Div que contiene el icono y la temperatura minima */}
-            <div className="temp-minima-container">
+            <div className="contenedor-datos">
               {/* Icono temperatura minima */}
               <img
                 src={temperaturaMinima}
@@ -113,7 +113,7 @@ function CardDiaActual({ climaActual, diaNoche }) {
           {/* Div que contiene la humedad y la velocidad del viento */}
           <div className="otros-datos">
             {/* Div que contiene el icono de la humedad y el dato de la humedad */}
-            <div className="humedad-container">
+            <div className="contenedor-datos margen-contenedor">
               {/* Icono de la humedad */}
               <img
                 src={humedad}
@@ -133,7 +133,7 @@ function CardDiaActual({ climaActual, diaNoche }) {
               <p>: {climaActual[0].main.humidity} %</p>
             </div>
             {/* Div que contiene el icono del vieto y el dato de la velocidad del viento */}
-            <div className="viento-container">
+            <div className="contenedor-datos">
               {/* Icono de la velocidad del viento */}
               <img
                 src={viento}

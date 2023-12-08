@@ -23,7 +23,7 @@ function ListaDias({ el, diaNoche }) {
     /* Div padre que contiene la información de el clima de los proximos 5 días */
     <div className="clima-5-dias">
       {/* Texo de los próximos 5 dias */}
-      <div className="texto-dias">
+      <div className="contenedor-fila texto-dias">
         <p>Clima durante los próximos 5 días</p>
       </div>
       {/* Div contiene las card con la información de los proximos 5 días */}
@@ -42,7 +42,7 @@ function ListaDias({ el, diaNoche }) {
           el.list.map((item, index) => (
             /* Div padre que contiene toda la información de cada día */
             <div
-              className="dia"
+              className="contenedor-columna dia"
               key={index}
               style={{
                 borderColor: `${
@@ -53,13 +53,15 @@ function ListaDias({ el, diaNoche }) {
               }}
             >
               {/* Div contiene el nombre del día, la descripción, icono y temperatura del dia */}
-              <div className="datos-principales-container">
+              <div className="contenedor-columna datos-principales-container">
                 <p className="nombre-dia">
                   {/* Mostrar nombre del día */}
                   {obtenerDia(item.dt_txt)}
                 </p>
                 {/* Descripción del clima para cada día */}
-                <p className="descripcion-clima">{item.weather[0].description}</p>
+                <p className="descripcion-clima">
+                  {item.weather[0].description}
+                </p>
                 {/* Icono del estado del clima para cada día */}
                 <img
                   src={`https://openweathermap.org/img/w/${item.weather[0].icon}.png`}
@@ -71,8 +73,8 @@ function ListaDias({ el, diaNoche }) {
                 </p>
               </div>
 
-              <div className="datos-adicionales-container">
-                <div className="temperatura-min-max-container">
+              <div className="contenedor-fila datos-adicionales-container">
+                <div className="contenedor-columna temperatura-min-max-container">
                   {/* Div que contien el icono de la temperatura maxima y la información */}
                   <div className="container-datos">
                     {/* Icono para la temperatura maxima */}
@@ -111,7 +113,7 @@ function ListaDias({ el, diaNoche }) {
                   </div>
                 </div>
 
-                <div className="humedad-viento-container">
+                <div className="contenedor-columna humedad-viento-container">
                   {/* Div que contien el icono de la humedad y la información */}
                   <div className="container-datos">
                     {/* Icono para la humedad */}

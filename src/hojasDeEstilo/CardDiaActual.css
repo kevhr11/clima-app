@@ -6,11 +6,6 @@
   align-items: center;
 }
 
-/* .dia-actual > div > p {
-  margin: 0 0 15px;
-  padding: 0;
-} */
-
 /* En esta clase se aplican los estilos al div que contiene el icono del pais y el nombre */
 .pais {
   display: flex;
@@ -64,27 +59,35 @@
   margin-bottom: 15px;
 }
 
-/* Clase que se aplica al div que contiene el icono y la temperatura maxima */
-.temp-maxima-container {
+.contenedor-datos{
   display: flex;
+}
+
+.margen-contenedor{
   margin-bottom: 10px;
 }
+
+/* Clase que se aplica al div que contiene el icono y la temperatura maxima */
+/* .temp-maxima-container {
+  display: flex;
+  margin-bottom: 10px;
+} */
 
 /* Clase que se aplica al div que contiene el icono y la temperatura minima */
-.temp-minima-container {
+/* .temp-minima-container {
   display: flex;
-}
+} */
 
 /* Clase que se aplica al div que contiene el icono de la humedad y el dato de la humedad */
-.humedad-container {
+/* .humedad-container {
   display: flex;
   margin-bottom: 10px;
-}
+} */
 
 /* Clase que se aplica al div que contiene el icono del vieto y el dato de la velocidad del viento */
-.viento-container {
+/* .viento-container {
   display: flex;
-}
+} */
 
 /* Clase que se aplica a los iconos de los datos adicionales como son la temperatura maxima y minima, la humedad y la velocidad del viento */
 .datosAdicionalesImg {
