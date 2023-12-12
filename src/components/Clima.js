@@ -5,6 +5,7 @@ import "../hojasDeEstilo/Clima.css";
 import axios from "axios";
 import Formulario from "./Formulario";
 import Card from "./Card";
+import Spinner from "./Spinner";
 
 // Crear un nuevo objeto Date, que representa la fecha y hora actuales
 const fechaActual = new Date(); //Esta constante almacena la fecha y hora actual
@@ -33,7 +34,8 @@ function Clima() {
   const [climaActual, setClimaActual] = useState(""); //Almacena el clima del día actual
   const [clima, setClima] = useState(""); //Almacena el clima de los proximos 5 días
   const [errorCiudad, setErrorCiudad] = useState(""); //Almacena los errores si el país no existe en el servidor o si el país tiene 2 palabras no deben ir unidas
-  const [errorPermisoUbicacion, setErrorPermisoUbicacion] = useState("")
+  const [errorPermisoUbicacion, setErrorPermisoUbicacion] = useState("");
+  const [loading, setLoading] = useState(true);
 
   const diaNoche = 18;
 
@@ -76,7 +78,10 @@ function Clima() {
             const climaData = filtrarClima(responseDias.data);
             // Limpiar el estado antes de agregar el nuevo resultado
             setClima([{ ...responseDias.data, list: climaData }]);
-          } catch (error) {}
+            setLoading(false);
+          } catch (error) {
+            setLoading(false);
+          }
         };
 
         fetchData();
@@ -90,24 +95,28 @@ function Clima() {
             setErrorPermisoUbicacion(
               "El usuario denegó la solicitud de geolocalización."
             );
+            setLoading(false);
             break;
           //Mostrar error en caso de que la información no este disponible
           case error.POSITION_UNAVAILABLE:
             setErrorPermisoUbicacion(
               "La información de ubicación no está disponible."
             );
+            setLoading(false);
             break;
           case error.TIMEOUT:
             //Mostrar error en caso de que el tiempo de espera de para permitir el acceso se termine
             setErrorPermisoUbicacion(
               "La información de ubicación no está disponible."
             );
+            setLoading(false);
             break;
           case error.UNKNOWN_ERROR:
             //Mostrar error en caso de que sea desconocido
             setErrorPermisoUbicacion(
               "Ocurrió un error desconocido al obtener la ubicación."
             );
+            setLoading(false);
             break;
           default:
         }
@@ -141,6 +150,7 @@ function Clima() {
           // Agregar el nuevo resultado al estado
           setClima([{ ...response.data, list: climaFiltrado }]);
         } catch (error) {
+
           // Manejar el error aquí
           setErrorCiudad(
             "El país seleccionado no existe verifique si esta bien escrito o si son dos palabras no pueden estar unidas."
@@ -152,6 +162,10 @@ function Clima() {
       getData();
     }
   };
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="contenedor-principal">
