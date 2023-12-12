@@ -16,6 +16,10 @@ input {
   border-radius: 5px;
 }
 
+input::placeholder {
+    font-size: 1rem;
+  }
+
 /* Estilos para el boton */
 button {
   padding: 10px;
@@ -29,7 +33,7 @@ button {
 }
 
 /* Clase del div que contiene el formulario */
-.formulario-envio{
+.formulario-envio {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,14 +43,26 @@ button {
 /* Media query para resolución movil */
 @media (max-width: 767px) {
   /* Estilos del div para resolución movil */
-  .formulario-envio{
+  .formulario-envio {
     text-align: center;
     font-size: 1rem;
-    width: 80%;
+    width: 100%;
+  }
+
+  form{
+    width: 100%;
+  }
+
+  input {
+    width: 100%;
+  }
+  
+  input::placeholder {
+    font-size: .8rem;
   }
 
   /* Estilos del boton para el ancho y del boton y el tamaño de la letra */
-  button{
+  button {
     font-size: 15px;
     width: 4rem;
   }

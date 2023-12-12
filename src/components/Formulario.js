@@ -33,7 +33,7 @@ function Formulario({ mostrarClima, setErrorCiudad }) {
           onChange={(e) => setCiudad(e.target.value)}
           placeholder="Ingresar el país o ciudad"
         />
-        <button>Enviar</button>
+        <button>Buscar</button>
       </form>
     </div>
   );
