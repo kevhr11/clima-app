@@ -19,7 +19,7 @@ function Formulario({ mostrarClima, setErrorCiudad }) {
         mostrarClima(ciudad);
       } else {
         setErrorCiudad(
-          "Verifique que el país este bien escrito respetando los espacios entre palabras y no contenga números o caracteres especiales"
+          "Verifique que el país este bien escrito no puede contener números o caracteres especiales"
         );
       }
     }
